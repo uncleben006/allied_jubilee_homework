@@ -24,6 +24,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
+        // TODO: Schedule daily job. Crawl https://astro.click108.com.tw/ and store in database.
         // $schedule->command('inspire')->hourly();
     }
 

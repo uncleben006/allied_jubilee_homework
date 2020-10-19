@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+//    return view('welcome');
+    return redirect()->route('user.index');
 });
+
+Route::resource('/user', UserController::class)->only(['index','create', 'store']);
+
+Route::post('user/check', [UserController::class,'check'])->name('user.check');
+Route::post('user/verify', [UserController::class,'verify'])->name('user.verify');
+Route::post('user/logout', [UserController::class,'logout'])->name('user.logout');

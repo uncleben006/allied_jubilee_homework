@@ -13,6 +13,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        // TODO: create default user
         // \App\Models\User::factory(10)->create();
     }
 }

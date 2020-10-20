@@ -11,8 +11,6 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use Symfony\Component\DomCrawler\Crawler;
-
 
 class UserController extends Controller
 {
@@ -24,23 +22,6 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
-
-//        $opts = [
-//            "ssl" => array(
-//                'ciphers' => 'DEFAULT:!DH',
-//            ),
-//            "https" => [
-//                "method" => "GET",
-//            ]
-//        ];
-//
-//        $context = stream_context_create($opts);
-//        $url = 'https://astro.click108.com.tw';
-//        $html = file_get_contents($url, false, $context);
-//        $crawler = new Crawler($html);
-//
-//        var_dump($crawler->children());
-
         if (Auth::check()) {
             return view('index');
         }

@@ -24,7 +24,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->call('App\Http\Controllers\StarController@index')->daily();
+        $schedule->call('App\Http\Controllers\StarController@index')->everySixHours();
     }
 
     /**

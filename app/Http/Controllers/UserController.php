@@ -15,12 +15,9 @@ use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @param Request $request
      * @return Application|Factory|View
      */
-    public function index(Request $request)
+    public function index()
     {
         if (Auth::check()) {
             return view('index');
@@ -62,13 +59,11 @@ class UserController extends Controller
 
 
     /**
-     * @param Request $request
      * @return RedirectResponse
      */
-    public function logout(Request $request)
+    public function logout()
     {
-        $id = $request->id;
-        Auth::logout($id);
+        Auth::logout();
         return redirect()->route('user.index');
     }
 
@@ -93,8 +88,8 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => ['required', 'string'],
-            'email' => ['required', 'email'],
+            'name' => ['required', 'string', 'unique:users'],
+            'email' => ['required', 'email', 'unique:users'],
             'password' => ['required']
         ]);
 

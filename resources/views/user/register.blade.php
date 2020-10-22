@@ -24,6 +24,7 @@
             </div>
             <button class="btn btn-md btn-primary btn-block mt-0 mb-2" id="register" type="submit">Register</button>
             <a href="{{url()->route('user.index')}}" id="login" class="text-primary">Login</a>
+            <a href="{{url()->route('star.index')}}" id="stars" class="text-primary float-right" target="_blank">Stars</a>
             @if($errors->any())
                 <div class="text-danger mt-2" role="alert">
                     <strong>{{$errors->first()}}</strong>

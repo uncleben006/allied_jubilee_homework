@@ -19,6 +19,7 @@
             <button class="btn btn-md btn-primary btn-block mt-0 mb-2" id="check_user">Check account</button>
             <button class="btn btn-md btn-success btn-block mt-0 mb-2" id="sign_in" type="submit">Sign in</button>
             <a href="{{url()->route('user.create')}}" id="register" class="text-primary">Register</a>
+            <a href="{{url()->route('star.index')}}" id="stars" class="text-primary float-right" target="_blank">Stars</a>
 
             @if($errors->any())
                 <div class="text-danger mt-2" role="alert">
